@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
   describe 'validations' do
     it 'will be accepted if the user provide his/her name' do
         new_user = User.new(name: 'Maha Magdy', email: 'maha_magdy@gmail.com',

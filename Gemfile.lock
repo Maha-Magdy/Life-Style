@@ -251,6 +251,7 @@ DEPENDENCIES
   factory_bot_rails
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  mini_magick (~> 4.11.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
