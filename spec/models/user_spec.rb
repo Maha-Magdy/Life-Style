@@ -18,6 +18,13 @@ RSpec.describe User, type: :model do
       expect(new_user).to_not be_valid
     end
 
+    it 'will not be accepted if the user provide his/her name with length more than 15 characters' do
+      new_user = User.new(name: 'Maha Magdy Ibrahim Abd-elaal', email: 'maha_magdy@gmail.com',
+        password: '123456', password_confirmation: '123456')
+
+      expect(new_user).to_not be_valid
+    end
+
     it 'will not be accepted if the user provide not unique name' do
       first_user = User.new(name: 'Maha Magdy', email: 'maha_magdy@gmail.com',
         password: '123456', password_confirmation: '123456')
