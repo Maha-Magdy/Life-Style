@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap/scss/bootstrap";
+
+$life-style-brown: #4e443e;
+$life-style-orange: #f76108;
+$life-style-grey: #8a8682;
+
+body {
+  font-family: sans-serif;
+}
+
+.navbar .navbar-brand {
+  color: $life-style-brown;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    width: 12.5px;
+    height: 12.5px;
+    background-color: $life-style-orange;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 3px;
+  }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+  color: $life-style-orange;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.nav-link {
+  color: $life-style-grey;
+  &:hover {
+    color: $life-style-brown;
+  }
+}

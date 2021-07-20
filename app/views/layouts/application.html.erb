@@ -11,7 +11,31 @@
   </head>
 
   <body>
-    <%= link_to 'Sign out', users_sign_out_path %>
+
+    <nav class="navbar sticky-top navbar-light bg-white">
+      <div class="container-fluid">
+        <div>
+            <a class="navbar-brand mb-0 me-5 h1" href="#">LiFEsTYLe</a>
+
+          <div class="d-inline-block">
+            <ul class="navbar-nav d-flex flex-row mx-5">
+              <li class="nav-item me-3 text-uppercase">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item text-uppercase">
+                <a class="nav-link" href="#">Write an article</a>
+              </li>
+            </ul>
+         </div>
+        </div>
+
+        <div>
+          <%= link_to 'LOG OUT', users_sign_out_path, class: 'nav-link' %>
+        </div>
+      </div>
+    </nav>
+
+    
     <div class="notice">
       <p><%= notice %></p>
     </div>
