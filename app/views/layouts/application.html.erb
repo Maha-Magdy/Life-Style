@@ -7,10 +7,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= link_to 'Sign out', users_sign_out_path %>
+    <div class="notice">
+      <p><%= notice %></p>
+    </div>
+    
+    <div class="alert">
+      <p><%= alert %></p>
+    </div>
+    
     <%= yield %>
   </body>
 </html>
