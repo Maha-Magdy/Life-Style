@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_20_004830) do
+ActiveRecord::Schema.define(version: 2021_07_21_064525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_07_20_004830) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["priority"], name: "index_categories_on_priority", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,12 +77,6 @@ ActiveRecord::Schema.define(version: 2021_07_20_004830) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", default: "", null: false
     t.string "gravatar_url"
-    t.datetime "locked_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

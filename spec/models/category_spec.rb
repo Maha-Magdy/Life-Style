@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it 'will be accepted if the all the needed properties provided' do
+      new_category = Category.new(name: 'Fashion', priority: 1)
+      expect(new_category).to be_valid
+    end
+  end
 end
