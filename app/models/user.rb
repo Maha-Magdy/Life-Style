@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: 15}
   validates :email, presence: true, uniqueness: true
 
-  has_many :articles, inverse_of: 'author'
+  has_many :articles, class_name: :Article, foreign_key: 'author_id'
   has_many :votes, dependent: :destroy
 end
