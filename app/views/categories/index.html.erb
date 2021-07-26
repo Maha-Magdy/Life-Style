@@ -1,0 +1,9 @@
+<div class="container_fluid">
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-md-6 col-lg-3">
+        <%= render partial: "category", locals: {category: category} %>
+      </div>
+    <% end %>
+  </div>
+</div>

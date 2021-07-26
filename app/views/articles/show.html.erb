@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+		<%= image_tag @article.photo if @article.photo.attached? %>
+	</div>
+	<div class="row">
+		<h1><%= @article.title %></h1>
+	</div>
+	<div class="row">
+		<p><%= @article.text %></p>
+	</div>
+	<div class="row">
+		<div>
+			<h4>Comments</h4>
+			<%= vote_unvote_option(@article) %>
+		</div>
+		<input placeholder="write a comment">
+		<button type="submit">Add a comment</button>
+		
+	</div>
+</div>

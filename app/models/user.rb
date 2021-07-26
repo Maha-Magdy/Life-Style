@@ -8,5 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :articles, class_name: :Article, foreign_key: 'author_id'
+
   has_many :votes, dependent: :destroy
+  has_many :voted_article, through: :votes, source: :article
 end
