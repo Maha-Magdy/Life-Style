@@ -7,3 +7,4 @@ class AddTrackableFieldsToUser < ActiveRecord::Migration[6.1]
     add_column :users, :last_sign_in_ip, :inet
   end
 end
+

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-6 article-container">
+        <div class="d-flex">
+          <div>
+            <%= image_tag article.photo if article.photo.attached? %>
+          </div>
+          <div>
+            <h4><%= @Category.name %></h4>
+            <h5><%= article.title %></h5>
+            <p><%=  article.text %></p>
+            <%= link_to 'Read More', article_path(article)%>
+          </div>
+        </div>
+      <div>
+    <% end %>
+  </div>
+</div>

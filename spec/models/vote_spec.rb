@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Vote, type: :model do
   describe 'validations' do
     it 'will be accepted if all the needed properties provided' do
-      new_user = User.new(name: 'Maha Magdy', email: 'maha_magdy@gmail.com',
-                          password: '123456', password_confirmation: '123456')
+      new_user = User.new(name: 'Maha Magdy', email: 'maha_magdy@gmail.com', password: '123456', password_confirmation: '123456')
+      
       new_user.save
 
       new_article = Article.new(author: new_user, title: 'London Journey',

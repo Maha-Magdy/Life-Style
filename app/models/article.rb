@@ -6,9 +6,14 @@ class Article < ApplicationRecord
     validates :author_id, presence: true
 
     belongs_to :author, class_name: 'User' 
-    has_one_attached :photo
+
+    has_one_attached :photo, dependent: :destroy
+
     has_many :votes, dependent: :destroy
+    has_many :voters, through: :votes, source: :user
+
     has_and_belongs_to_many :categories
+
 
     # validates :photo, presence: true
     # validates :categories, presence: true

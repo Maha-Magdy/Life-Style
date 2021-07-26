@@ -1,0 +1,25 @@
+<div class="container_fluid">
+  <div class="row">
+    <%= image_tag @featued_article.photo if @featued_article.photo.attached? %>
+
+    <p>
+      <%=  @featued_article.title %>
+    </p>
+
+    <div>
+      <span class="unvoted"></span>
+      <span><%= @featued_article.votes.size %>
+    <div>
+  </div>
+  
+  <div class="row">
+    <% @categories.each do |category| %>
+      
+      <div class="col-md-6 col-lg-3">
+        <%= render partial: "category", locals: {category: category} %>
+        <p> <%= category.articles.ordered_by_most_recent.first.title %> </p>
+        <%= image_tag category.articles.ordered_by_most_recent.first.photo if category.articles.ordered_by_most_recent.first.photo.attached? %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,170 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap/scss/bootstrap";
+
+$life-style-brown: #4e443e;
+$life-style-orange: #f76108;
+$life-style-grey: #8a8682;
+$life-style-alert: #f44336;
+$life-style-notice: #4caf50;
+
+body {
+  font-family: sans-serif;
+}
+
+/******************** common classes **********************/
+.life-style-brown-color {
+  color: $life-style-brown;
+}
+
+.life-style-white-color {
+  color: white;
+}
+
+.life-style-orange-bg-color {
+  background-color: $life-style-orange;
+}
+
+.life-style-notice-bg-color {
+  background-color: $life-style-notice;
+}
+
+.life-style-alert-bg-color {
+  background-color: $life-style-alert;
+}
+
+.life-style-btn-primary {
+  background-color: $life-style-orange;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.life-style-flashes-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  min-width: 25%;
+}
+.life-style-alert-flash {
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+/*********************************************************/
+
+.navbar .navbar-brand {
+  color: $life-style-brown;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    width: 12.5px;
+    height: 12.5px;
+    background-color: $life-style-orange;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 3px;
+  }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+  color: $life-style-orange;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.nav-link {
+  color: $life-style-grey;
+  &:hover {
+    color: $life-style-brown;
+  }
+}
+
+/******************** scrollbar **********************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.699);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $life-style-grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $life-style-brown;
+}
+
+/*******************************************************/
+
+/******************** create article common classes **********************/
+.categories-check-boxes {
+  input[type="checkbox"] {
+    position: relative;
+    width: 1.2em;
+    height: 1.2em;
+    color: $black;
+    border: 1px solid $life-style-brown;
+    border-radius: 4px;
+    appearance: none;
+    outline: 0;
+    cursor: pointer;
+    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 1px;
+      left: 5.5px;
+      width: 6px;
+      height: 12px;
+      border-style: solid;
+      border-color: white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+    &:checked {
+      color: white;
+      border-color: $life-style-brown;
+      background: $life-style-brown;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  label {
+    margin: 0 15px 0 5px;
+    cursor: pointer;
+    vertical-align: text-bottom;
+  }
+}
+
+/*************************************************************************/

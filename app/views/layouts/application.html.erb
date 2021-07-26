@@ -11,13 +11,46 @@
   </head>
 
   <body>
-    <%= link_to 'Sign out', users_sign_out_path %>
-    <div class="notice">
-      <p><%= notice %></p>
-    </div>
-    
-    <div class="alert">
-      <p><%= alert %></p>
+
+    <nav class="navbar sticky-top navbar-light bg-white shadow-sm">
+      <div class="container-fluid">
+        <div>
+            <%= link_to 'LiFEsTYLe', root_path, class: 'navbar-brand mb-0 me-5 h1' %>
+
+          <div class="d-inline-block">
+            <ul class="navbar-nav d-flex flex-row mx-5">
+              <li class="nav-item me-3 text-uppercase">
+                <%= link_to  'Home', root_path, class:'nav-link active' %>
+              </li>
+              <li class="nav-item text-uppercase">
+                <%= link_to 'Write an article', new_article_path, class:'nav-link' %>
+              </li>
+            </ul>
+         </div>
+        </div>
+
+        <div>
+          <%= link_to 'LOG OUT', users_sign_out_path, class: 'nav-link' %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="life-style-flashes-container">
+      <% if notice.present? %>
+        <div class="life-style-notice-flash shadow" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="life-style-notice-bg-color py-2 px-3">
+            <%= content_tag(:span, notice, class:"text-white") %>
+          </div>
+        </div>
+      <% end %>
+      
+      <% if alert.present? %>
+        <div class="life-style-alert-flash shadow" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="life-style-alert-bg-color py-2 px-3">
+            <%= content_tag(:span, alert, class:"text-white") %>
+          </div>
+        </div>
+      <% end %>
     </div>
     
     <%= yield %>
