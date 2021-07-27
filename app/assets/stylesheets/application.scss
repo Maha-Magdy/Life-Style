@@ -224,18 +224,25 @@ footer .navbar-brand,
   }
 }
 
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .show > .nav-link {
-  color: $life-style-orange;
+.nav-link {
+  color: $life-style-grey;
+
+  &:hover {
+    color: $life-style-brown;
+  }
 }
 
-.nav-link,
 .navbar-light .navbar-nav .nav-link {
   color: $life-style-grey;
 
   &:hover {
     color: $life-style-brown;
   }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+  color: $life-style-orange;
 }
 
 /******************** create article common classes **********************/
