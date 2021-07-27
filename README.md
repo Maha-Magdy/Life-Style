@@ -79,6 +79,7 @@ Give a ⭐️ if you like this project!
 
 ### **_Acknowledgments_** 
 [Nelson Sakwa](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
+
 [Articles taken from cnn as a test dummy data](https://edition.cnn.com/)
 ### **_📝 License_** 
 
