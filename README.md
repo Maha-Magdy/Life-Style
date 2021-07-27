@@ -78,9 +78,9 @@ Feel free to check the [issues page]( https://github.com/Maha-Magdy/Life-Style/i
 Give a ⭐️ if you like this project!
 
 ### **_Acknowledgments_** 
-[Nelson Sakwa](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
+[Nelson Sakwa, who owns the user interface design](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
 
-[Articles taken from cnn as a test dummy data](https://edition.cnn.com/)
+[Articles, which taken from CNN as a test dummy data](https://edition.cnn.com/)
 ### **_📝 License_** 
 
 This project is [MIT](./LICENSE) licensed.
