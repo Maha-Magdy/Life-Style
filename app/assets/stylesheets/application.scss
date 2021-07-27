@@ -37,6 +37,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
 }
 
 /******************** common classes **********************/
@@ -165,6 +166,13 @@ input:-webkit-autofill:active {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.h-truncate {
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 16ch;
 }
 /*********************************************************/
 
@@ -300,36 +308,68 @@ footer .navbar-brand {
     cursor: auto;
   }
 
-  a:nth-child(3) { 
+  a:nth-child(3) {
     position: absolute;
     top: 4em;
     h5 {
-    border-bottom: 2px solid $life-style-yellow;
-    z-index: 10;
-    cursor: pointer;
-    &:hover {
-      animation: links_animation 0.25s linear 1;
-      transform: translateY(-5px);
+      border-bottom: 2px solid $life-style-yellow;
+      z-index: 10;
+      cursor: pointer;
+      &:hover {
+        animation: links_animation 0.25s linear 1;
+        transform: translateY(-5px);
+      }
     }
   }
-}
 
   h5:last-child {
     position: absolute;
-    bottom: .5em;
+    bottom: 0.5em;
     z-index: 10;
   }
 }
 
-@keyframes links_animation{
-  0%{
+@keyframes links_animation {
+  0% {
     transform: translateY(0px);
   }
-  100%{
+  100% {
     transform: translateY(-5px);
   }
 }
 
+.border-bottom-orange {
+  border-bottom: 2px solid $life-style-orange;
+}
+
+.article-container {
+  a:hover {
+    border-bottom: 1px solid $life-style-orange;
+    color: $life-style-orange;
+  }
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.general-article-container {
+  .article-container:nth-child(4n-1) > div,
+  .article-container:nth-child(4n) > div{
+    > div:first-child {
+      order: 2;
+    }
+  }
+}
 /****************************************************/
 
 /******************** Footer **********************/
