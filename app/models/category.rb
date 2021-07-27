@@ -3,4 +3,6 @@ class Category < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :priority, presence: true, uniqueness: true
+
+    scope :ordered_by_priority, -> { order(:priority)}
 end

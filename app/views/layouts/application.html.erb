@@ -21,11 +21,16 @@
             <div class="d-inline-block">
               <ul class="navbar-nav d-flex flex-row mx-5">
                 <li class="nav-item me-3 text-uppercase">
-                  <%= link_to  'Home', root_path, class:'nav-link active' %>
+                  <%= menu_link_to 'Home', root_path%>
                 </li>
-                <li class="nav-item text-uppercase">
-                  <%= link_to 'Write an article', new_article_path, class:'nav-link' %>
+                <li class="nav-item text-uppercase me-3">
+                  <%= menu_link_to 'Write an article', new_article_path%>
                 </li>
+                <% Category.all.ordered_by_priority.each do |category| %>
+                  <li class="nav-item text-uppercase me-3">
+                     <%= menu_link_to category.name, category_path(category)%>
+                  </li>
+                <% end %>
               </ul>
           </div>
          <% end %>
@@ -63,6 +68,41 @@
       <% end %>
     </div>
     
-    <%= yield %>
+    <div class="general-min-height">
+      <%= yield %>
+    </div>
+
+    <% if current_user %>
+      <footer class="footer mt-auto py-3 life-style-brown-bg-color text-white">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div>
+            <%= link_to 'LiFEsTYLe', root_path, class: 'navbar-brand mb-0 me-5 h1 text-white link-none-hover' %>
+
+            <div class="d-inline-block">
+              <ul class="navbar-nav d-flex flex-row align-items-center mx-5">
+                <li class="nav-item me-3">
+                  <%= link_to  'Privacy Policy', root_path, class:'life-style-orange-color link-hover-orange-color' %>
+                </li>
+                <li class="nav-item me-3">
+                  <%= link_to 'Terms & Conditions', root_path, class:'life-style-orange-color link-hover-orange-color' %>
+                </li>
+                  <li class="nav-item me-3">
+                     <span>Copyright 2021. All rights reserved</span>
+                  </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="px-3 d-flex align-items-center">
+            <span>Connect with us: </span>
+            <ul class="nav justify-content-end">
+              <li class="nav-item social-media twitter px-1 pt-1"><a href="#"></a></li>
+              <li class="nav-item social-media instgram px-1 pt-1"><a href="#"></a></li>
+              <li class="nav-item social-media facebook px-1 pt-1"><a href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    <% end %>
   </body>
 </html>

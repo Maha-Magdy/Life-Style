@@ -19,11 +19,13 @@
 $life-style-brown: #4e443e;
 $life-style-orange: #f76108;
 $life-style-grey: #8a8682;
+$life-style-yellow: #d5d309;
 $life-style-alert: #f44336;
 $life-style-notice: #4caf50;
 
 body {
   font-family: sans-serif;
+  // overflow-x: hidden;
 }
 
 a:hover {
@@ -46,7 +48,8 @@ input:-webkit-autofill:active {
   color: $life-style-grey;
 }
 
-.life-style-orange-color {
+.life-style-orange-color,
+.link-hover-orange-color:hover {
   color: $life-style-orange;
 }
 
@@ -56,6 +59,10 @@ input:-webkit-autofill:active {
 
 .life-style-orange-bg-color {
   background-color: $life-style-orange;
+}
+
+.life-style-brown-bg-color {
+  background-color: $life-style-brown;
 }
 
 .life-style-notice-bg-color {
@@ -129,9 +136,40 @@ input:-webkit-autofill:active {
     }
   }
 }
+
+.link-none-hover {
+  :hover {
+    color: unset !important;
+  }
+}
+
+.general-min-height {
+  min-height: calc(100vh - 124px);
+}
+
+.overlay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2910014a;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /*********************************************************/
 
-.navbar .navbar-brand {
+.navbar .navbar-brand,
+footer .navbar-brand {
   color: $life-style-brown;
   font-weight: bold;
 
@@ -230,3 +268,89 @@ input:-webkit-autofill:active {
 }
 
 /*************************************************************************/
+
+/******************** categories **********************/
+
+.featued_article {
+  height: calc(100vh - 56px);
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .article-description {
+    z-index: 10;
+    position: absolute;
+    bottom: 1.5em;
+  }
+}
+
+.category-card {
+  height: 210px;
+  overflow: hidden;
+  img {
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    cursor: auto;
+  }
+
+  a:nth-child(3) { 
+    position: absolute;
+    top: 4em;
+    h5 {
+    border-bottom: 2px solid $life-style-yellow;
+    z-index: 10;
+    cursor: pointer;
+    &:hover {
+      animation: links_animation 0.25s linear 1;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+  h5:last-child {
+    position: absolute;
+    bottom: .5em;
+    z-index: 10;
+  }
+}
+
+@keyframes links_animation{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}
+
+/****************************************************/
+
+/******************** Footer **********************/
+.social-media a {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.twitter a {
+  background: url(twitter.png) no-repeat center;
+  background-size: cover;
+}
+
+.instgram a {
+  background: url(instagram.png) no-repeat center;
+  background-size: cover;
+}
+
+.facebook a {
+  background: url(facebook.png) no-repeat center;
+  background-size: cover;
+}
+/************************************************/

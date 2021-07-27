@@ -1,14 +1,7 @@
 class CategoriesController < ApplicationController
     def index
         categories
-        # @articles = SELECT articles.*, COUNT(votes.id) as vote_count
-        #             FROM articles
-        #             INNER JOIN votes
-        #             ON votes.article_id = articles.id 
-        #             GROUP BY articles.id
-    
         @featued_article = Article.all.joins(:votes).group("articles.id").order("count(articles.id) DESC").first
-
     end
 
     def show
