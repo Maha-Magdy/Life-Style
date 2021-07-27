@@ -1,19 +1,21 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row general-article-container">
     <% @articles.each do |article| %>
-      <div class="col-md-6 article-container">
-        <div class="d-flex">
-          <div>
-            <%= image_tag article.photo if article.photo.attached? %>
+      <div class="col-md-6 article-container p-0">
+        <div class="d-flex h-100">
+          <div class="w-50 image-container">
+            <% if article.photo.attached? %>
+              <%= image_tag article.photo, class:"" %>
+            <% end %>
           </div>
-          <div>
-            <h4><%= @Category.name %></h4>
-            <h5><%= article.title %></h5>
-            <p><%=  article.text %></p>
-            <%= link_to 'Read More', article_path(article)%>
+          <div class="w-50 p-3">
+            <h4 class="fw-bold life-style-orange-color border-bottom-orange d-inline-block mb-3"><%= @category.name %></h4>
+            <h6 class="fw-bold mb-3"><%= article.title %></h6>
+            <p class="h-truncate"><%=  article.text %></p>
+            <%= link_to 'Read More', article_path(article), class:'life-style-orange-color text-decoration-none'%>
           </div>
         </div>
-      <div>
+      </div>
     <% end %>
   </div>
 </div>

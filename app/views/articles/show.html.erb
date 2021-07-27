@@ -1,20 +1,33 @@
-<div class="container">
-  <div class="row">
-		<%= image_tag @article.photo if @article.photo.attached? %>
+<div class="container py-5">
+  	<div class="row mb-4">
+      <% if @article.photo.attached? %>
+		<%= image_tag @article.photo, class:"img-fluid" %>
+	  <% end %>
 	</div>
-	<div class="row">
-		<h1><%= @article.title %></h1>
+
+	<div class="row mb-4">
+		<h3 class="fw-bold life-style-orange-color text-center m-0"><%= @article.title %></h3>
 	</div>
-	<div class="row">
-		<p><%= @article.text %></p>
+
+	<div class="row w-75 text-center mx-auto mb-4">
+		<p class="lh-lg"><%= @article.text %></p>
 	</div>
-	<div class="row">
-		<div>
-			<h4>Comments</h4>
+
+	<div class="row w-75 mx-auto">
+		<div class="d-flex justify-content-between px-0 mb-3">
+			<h5 class="life-style-brown-color fw-bold">comments</h5>
 			<%= vote_unvote_option(@article) %>
 		</div>
-		<input placeholder="write a comment">
-		<button type="submit">Add a comment</button>
-		
+
+		<div class="px-0">
+		    <div class='article-comments-section'>
+    			<%= render partial: 'comments/comment', collection: @article.comments %>
+
+				<%= form_for(@article.comments.new, url: article_comments_path(@article)) do |form| %>
+					<%= form.text_area :content, class: 'w-75 form-control', rows: '2', cols:'50', placeholder: 'write a comment' %>
+					<%= form.submit 'Add a comment', class: 'btn life-style-btn-primary shadow-sm px-5 mt-3 w-25' %>
+				<% end %>
+  			</div>
+		</div>
 	</div>
 </div>
