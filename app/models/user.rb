@@ -11,4 +11,6 @@ class User < ApplicationRecord
 
   has_many :votes, dependent: :destroy
   has_many :voted_article, through: :votes, source: :article
+
+  has_many :comments, dependent: :destroy
 end

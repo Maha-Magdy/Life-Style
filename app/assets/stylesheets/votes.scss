@@ -10,10 +10,10 @@
 
 .unvoted {
   background: url(unvoted.png) no-repeat center;
-  background-size: cover;
+  background-size: contain;
 }
 
 .voted {
   background: url(voted.png) no-repeat center;
-  background-size: cover;
+  background-size: contain;
 }
