@@ -1,0 +1,32 @@
+<%= form_with model: article do |form| %>
+
+  <div class="my-3">
+    <h4 class='text-center life-style-brown-color fw-bold'>New Article Form</h4>
+    <div class="form_field my-4">
+      <%= form.label :title, class: 'form-label life-style-brown-color' %>
+      <%= form.text_field :title, id: :article_title, class: 'form-control', placeholder: 'Article Title' %>
+      <div id="emailHelp" class="form-text">The maximum characters allowed in article's title is 100.</div>
+    </div>
+      
+    <div class="form_field my-4">
+      <%= form.label :text, 'Content', class: 'form-label life-style-brown-color fw-bold' %>
+      <%= form.text_area :text, id: :article_text, class: 'form-control', placeholder: 'Article Content', rows: '12' %>
+    </div>
+
+    <div class="form_field my-4">
+      <%= form.label :category, class: 'form-label life-style-brown-color fw-bold' %>
+      <div class="categories-check-boxes">
+        <%= form.collection_check_boxes :category_ids, Category.order(:priority), :id, :name %>
+      </div>
+    </div>
+
+    <div class="form_field my-4">
+      <%= form.label :photo,  class: 'form-label life-style-brown-color fw-bold' %>
+      <%= form.file_field :photo, class: 'form-control'%>
+    </div>
+
+    <div class="form_field my-4 text-center">
+      <%= form.submit 'Save', class: 'btn life-style-btn-primary shadow-sm px-5 mx-auto mt-3 w-50' %>
+    </div>
+  </div>
+<% end %>

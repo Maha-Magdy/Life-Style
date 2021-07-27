@@ -1,0 +1,36 @@
+<div class="container-fluid px-0">
+  <div class="row position-relative featued_article w-100 m-0">
+    <% if @featued_article %>
+    <a href="<%= article_path(@featued_article.id) %>" class="px-0">
+        <%= featued_image(@featued_article) %>
+
+        <div class="overlay w-100"> </div>
+
+        <div class="article-description d-flex justify-content-between px-0 w-100">
+          <div class="headline w-75">
+
+            <h4 class="life-style-orange-color fw-bold px-4">
+              <%=  @featued_article.title %>
+            </h4>
+
+            <p class="text-white w-100 px-4 truncate"> <%= @featued_article.text %> </p>
+
+          </div>
+
+          <div class="votes px-4 d-flex">
+            <span class="vote voted mx-1"></span>
+            <span class="text-white mx-1"><%= @featued_article.votes.size %></span>
+          </div>
+      </div>
+     </a>
+    <% end %>
+  </div>
+  
+  <div class="row mx-0 w-100">
+    <% @categories.each do |category| %>
+      <div class="col-md-6 col-lg-3 position-relative category-card px-0">
+        <%= render partial: "category", locals: {category: category} %>    
+      </div>
+    <% end %>
+  </div>
+</div>

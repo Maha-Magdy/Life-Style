@@ -5,12 +5,104 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag 'favicon.png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav class="navbar sticky-top navbar-light bg-white shadow-sm">
+      <div class="container-fluid">
+        <div>
+          <%= link_to 'LiFEsTYLe', root_path, class: 'navbar-brand mb-0 me-5 h1' %>
+
+          <% if current_user %>
+            <div class="d-inline-block">
+              <ul class="navbar-nav d-flex flex-row mx-5">
+                <li class="nav-item me-3 text-uppercase">
+                  <%= menu_link_to 'Home', root_path%>
+                </li>
+                <li class="nav-item text-uppercase me-3">
+                  <%= menu_link_to 'Write an article', new_article_path%>
+                </li>
+                <% Category.all.ordered_by_priority.each do |category| %>
+                  <li class="nav-item text-uppercase me-3">
+                     <%= menu_link_to category.name, category_path(category)%>
+                  </li>
+                <% end %>
+              </ul>
+          </div>
+         <% end %>
+        </div>
+
+        <% if current_user %>
+          <div>
+            <%= link_to 'LOG OUT', users_sign_out_path, class: 'nav-link' %>
+          </div>
+        <% end %>
+        <% if !current_user %>
+          <div>
+            <%= link_to 'LOG IN', new_user_session_path, class: 'nav-link' %>
+          </div>
+        <% end %>
+
+      </div>
+    </nav>
+
+    <div class="life-style-flashes-container">
+      <% if notice.present? %>
+        <div class="life-style-notice-flash shadow" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="life-style-notice-bg-color py-2 px-3">
+            <%= content_tag(:span, notice, class:"text-white") %>
+          </div>
+        </div>
+      <% end %>
+      
+      <% if alert.present? %>
+        <div class="life-style-alert-flash shadow" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="life-style-alert-bg-color py-2 px-3">
+            <%= content_tag(:span, alert, class:"text-white") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="general-min-height">
+      <%= yield %>
+    </div>
+
+    <% if current_user %>
+      <footer class="footer mt-auto py-3 life-style-brown-bg-color text-white">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div>
+            <%= link_to 'LiFEsTYLe', root_path, class: 'navbar-brand mb-0 me-5 h1 text-white link-none-hover' %>
+
+            <div class="d-inline-block">
+              <ul class="navbar-nav d-flex flex-row align-items-center mx-5">
+                <li class="nav-item me-3">
+                  <%= link_to  'Privacy Policy', root_path, class:'life-style-orange-color link-hover-orange-color' %>
+                </li>
+                <li class="nav-item me-3">
+                  <%= link_to 'Terms & Conditions', root_path, class:'life-style-orange-color link-hover-orange-color' %>
+                </li>
+                  <li class="nav-item me-3">
+                     <span>Copyright 2021. All rights reserved</span>
+                  </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="px-3 d-flex align-items-center">
+            <span>Connect with us: </span>
+            <ul class="nav justify-content-end">
+              <li class="nav-item social-media twitter px-1 pt-1"><a href="#"></a></li>
+              <li class="nav-item social-media instgram px-1 pt-1"><a href="#"></a></li>
+              <li class="nav-item social-media facebook px-1 pt-1"><a href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    <% end %>
   </body>
 </html>

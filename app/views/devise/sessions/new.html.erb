@@ -1,0 +1,33 @@
+<div class="w-25 mx-auto bg-white shadow px-5 py-3 my-5">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+
+    <div class="my-3">
+      <h4 class='text-center life-style-brown-color fw-bold'>Log in</h4>
+
+      <div class="form_field my-4">
+        <%= form.label :name, class: 'form-label life-style-brown-color fw-bold' %>
+        <%= form.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control', placeholder: 'Name' %>
+      </div>
+        
+      <div class="form_field mt-4 mb-3">
+        <%= form.label :password, class: 'form-label life-style-brown-color fw-bold' %>
+        <%= form.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password'%>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+      <div class="form_field mb-4 d-flex align-items-center">
+        <%= form.check_box :remember_me, class: 'life-style-check-box me-1' %>
+        <%= form.label :remember_me %>
+      </div>
+      <% end %>
+
+      <div class="form_field my-4 text-center">
+        <%= form.submit 'LOG IN', class: 'btn life-style-btn-primary shadow-sm px-5 mx-auto w-50' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="text-center mb-4">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

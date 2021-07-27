@@ -1,0 +1,10 @@
+<% if category.articles.ordered_by_most_recent.first %>
+    <%= image_tag category.articles.ordered_by_most_recent.first.photo if category.articles.ordered_by_most_recent.first.photo.attached? %>
+    <div class="overlay"> </div>
+    <a href="<%= category_path(category.id) %>" class="d-block">
+        <h5 class="text-white ms-4 fw-bold"> <%= category.name %> </h5>
+    </a>
+    <h5 class="text-white ms-4 truncate w-75"> <%= category.articles.ordered_by_most_recent.first.title %> </h5>
+<% else %>
+    <%= link_to category.name, category_path(category), class: 'life-style-grey-color text-center py-3 d-block' %>
+<% end %>
