@@ -40,6 +40,32 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px white inset !important;
 }
 
+/******************** scrollbar **********************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.699);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $life-style-grey;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $life-style-brown;
+}
+
+/*************************** end of the scrollbar ****************************/
+
 /******************** common classes **********************/
 .life-style-brown-color {
   color: $life-style-brown;
@@ -212,32 +238,6 @@ footer .navbar-brand,
   }
 }
 
-/******************** scrollbar **********************/
-
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.699);
-  border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $life-style-grey;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: $life-style-brown;
-}
-
-/*******************************************************/
-
 /******************** create article common classes **********************/
 .categories-check-boxes {
   input[type="checkbox"] {
@@ -343,6 +343,12 @@ footer .navbar-brand,
     cursor: auto;
   }
 
+  h5:last-child {
+    position: absolute;
+    bottom: 0.5em;
+    z-index: 10;
+  }
+
   a:nth-child(3) {
     position: absolute;
     top: 4em;
@@ -358,18 +364,13 @@ footer .navbar-brand,
       }
     }
   }
-
-  h5:last-child {
-    position: absolute;
-    bottom: 0.5em;
-    z-index: 10;
-  }
 }
 
 @keyframes links_animation {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
+
   100% {
     transform: translateY(-5px);
   }
@@ -401,10 +402,11 @@ footer .navbar-brand,
 
 .general-article-container {
   .article-container:nth-child(4n-1) > div,
-  .article-container:nth-child(4n) > div{
+  .article-container:nth-child(4n) > div {
     > div:first-child {
       order: 2;
     }
   }
 }
+
 /************************** end of the  section **************************/
