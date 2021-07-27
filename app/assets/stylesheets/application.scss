@@ -77,6 +77,7 @@ input:-webkit-autofill:active {
 .life-style-btn-primary {
   background-color: $life-style-orange;
   color: white;
+
   &:hover {
     color: white;
   }
@@ -88,7 +89,9 @@ input:-webkit-autofill:active {
   right: 15px;
   min-width: 25%;
 }
+
 .life-style-alert-flash {
+
   div {
     display: flex;
     align-items: center;
@@ -114,6 +117,7 @@ input:-webkit-autofill:active {
   outline: 0;
   cursor: pointer;
   transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
   &::before {
     position: absolute;
     content: "";
@@ -128,10 +132,12 @@ input:-webkit-autofill:active {
     transform: rotate(45deg);
     opacity: 0;
   }
+
   &:checked {
     color: white;
     border-color: $life-style-brown;
     background: $life-style-brown;
+
     &::before {
       opacity: 1;
     }
@@ -174,10 +180,10 @@ input:-webkit-autofill:active {
   text-overflow: ellipsis;
   max-height: 16ch;
 }
-/*********************************************************/
+/* end of the common classes */
 
-.navbar .navbar-brand,
-footer .navbar-brand {
+footer .navbar-brand,
+.navbar .navbar-brand{
   color: $life-style-brown;
   font-weight: bold;
 
