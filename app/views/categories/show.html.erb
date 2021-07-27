@@ -2,14 +2,14 @@
   <div class="row general-article-container">
     <% @articles.each do |article| %>
       <div class="col-md-6 article-container p-0">
-        <div class="d-flex">
+        <div class="d-flex h-100">
           <div class="w-50 image-container">
             <% if article.photo.attached? %>
               <%= image_tag article.photo, class:"" %>
             <% end %>
           </div>
           <div class="w-50 p-3">
-            <h4 class="fw-bold life-style-orange-color border-bottom-orange d-inline-block mb-3"><%= @Category.name %></h4>
+            <h4 class="fw-bold life-style-orange-color border-bottom-orange d-inline-block mb-3"><%= @category.name %></h4>
             <h6 class="fw-bold mb-3"><%= article.title %></h6>
             <p class="h-truncate"><%=  article.text %></p>
             <%= link_to 'Read More', article_path(article), class:'life-style-orange-color text-decoration-none'%>
