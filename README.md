@@ -9,7 +9,7 @@ The LiFEsTYLe is a blog created using Ruby on Rails. I have made this a simple b
 
 [Live Demo Link]( https://limitless-plains-70795.herokuapp.com/ )
 
-## Loom Video
+## Loom Videos
 [1. Loom Video Link](https://www.loom.com/share/3fce9bd09bfd48e9baecb70d3602a35d)
 
 [2. Loom Video Link](https://www.loom.com/share/6e49df5a567545fcbed90cd8cceada9f)
