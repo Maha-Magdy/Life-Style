@@ -56,7 +56,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 
 gem 'activesupport', '~> 6.1', '>= 6.1.4'
-
