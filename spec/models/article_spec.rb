@@ -7,10 +7,6 @@ RSpec.describe Article, type: :model do
                           password: '123456', password_confirmation: '123456')
       new_user.save
 
-      new_category = Category.new(name: 'Fashion', priority: 1)
-
-      new_category.save
-
       new_article = Article.new(author: new_user, title: 'London Journey',
                                 text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
                                         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
