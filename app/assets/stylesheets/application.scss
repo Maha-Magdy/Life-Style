@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import "bootstrap/scss/bootstrap";
+// @import "bootstrap/scss/bootstrap";
 
 $life-style-brown: #4e443e;
 $life-style-orange: #f76108;
@@ -135,7 +135,7 @@ input:-webkit-autofill:active {
   position: relative;
   width: 1.2em;
   height: 1.2em;
-  color: $black;
+  color: black;
   border: 1px solid $life-style-brown;
   border-radius: 4px;
   appearance: none;
@@ -251,7 +251,7 @@ footer .navbar-brand,
     position: relative;
     width: 1.2em;
     height: 1.2em;
-    color: $black;
+    color: black;
     border: 1px solid $life-style-brown;
     border-radius: 4px;
     appearance: none;
