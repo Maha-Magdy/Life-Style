@@ -7,7 +7,7 @@ The LiFEsTYLe is a blog created using Ruby on Rails. I have made this a simple b
 
 ## Live Demo
 
-[Live Demo Link]( https://maha-magdy.github.io/Royal-Parks-Half-Marathon/ )
+[Live Demo Link]( https://limitless-plains-70795.herokuapp.com/ )
 
 ## Loom Video
 [Loom Video Link](https://www.loom.com/share/3fce9bd09bfd48e9baecb70d3602a35d)
