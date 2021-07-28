@@ -58,3 +58,5 @@ gem 'devise'
 
 gem "aws-sdk-s3", require: false
 
+gem 'activesupport', '~> 6.1', '>= 6.1.4'
+
