@@ -225,7 +225,7 @@ footer .navbar-brand,
 }
 
 .nav-link {
-  color: $life-style-grey;
+  color: $life-style-grey !important;
 
   &:hover {
     color: $life-style-brown;
