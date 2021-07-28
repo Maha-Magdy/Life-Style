@@ -11,7 +11,7 @@ amazon:
   service: S3
   access_key_id: AKIAWUZTMOM6V2PJTDXZ
   secret_access_key: f2uypw+gj0eTLk6wbhz+hqRu5koWy6Ty2Ewq22jD
-  region: EU (London) eu-west-2
+  region: eu-west-2
   bucket: lifestyle-blog
 
 # Remember not to checkin your GCS keyfile to a repository
