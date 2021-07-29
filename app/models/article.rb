@@ -16,8 +16,8 @@ class Article < ApplicationRecord
 
   has_and_belongs_to_many :categories
 
-  # validates :photo, presence: true
-  # validates :categories, presence: true
+  validates :photo, presence: true
+  validates :categories, presence: true
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 end

@@ -12,6 +12,6 @@ class CategoriesController < ApplicationController
   private
 
   def categories
-    @categories = Category.all.order(:priority)
+    @categories = Category.all.order(:priority).includes(:articles)
   end
 end
