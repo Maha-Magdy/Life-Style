@@ -14,8 +14,6 @@
  *= require_self
  */
 
-// @import "bootstrap/scss/bootstrap";
-
 $life-style-brown: #4e443e;
 $life-style-orange: #f76108;
 $life-style-grey: #8a8682;
@@ -225,7 +223,7 @@ footer .navbar-brand,
 }
 
 .nav-link {
-  color: $life-style-grey !important;
+  color: $life-style-grey;
 
   &:hover {
     color: $life-style-brown;

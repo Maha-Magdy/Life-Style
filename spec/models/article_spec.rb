@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   describe 'validations' do
-    it 'will be accepted if all the needed properties provided' do
+    it 'will be not accepted because the provided properties missing the photo, and categries' do
       new_user = User.new(name: 'Maha Magdy', email: 'maha_magdy@gmail.com',
                           password: '123456', password_confirmation: '123456')
       new_user.save
@@ -13,7 +13,7 @@ RSpec.describe Article, type: :model do
                                         numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
                                         optio, eaque rerum! Provident similique accusantium nemo autem.')
 
-      expect(new_article).to be_valid
+      expect(new_article).to_not be_valid
     end
 
     it 'will not be accepted if the title is not provided' do
